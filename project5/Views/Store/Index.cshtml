@@ -1,0 +1,17 @@
+﻿
+@model IEnumerable<project5.Models.Variation>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<p>
+    Select from @Model.Count()
+    variations:
+</p>
+<ul>
+    @foreach (var variation in Model)
+    {
+        <li>@Html.ActionLink(variation.Name, "Browse", new { variation = variation.Name })</li>
+    }
+</ul>

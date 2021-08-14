@@ -1,0 +1,25 @@
+﻿
+@model project5.Models.Variation
+
+
+@{
+    ViewBag.Title = "Watches";
+}
+
+<div class="genre">
+    <h3><em>@Model.Name</em> Watches</h3>
+
+    <ul id="album-list">
+        @foreach (var watches in Model.Watches)
+        {
+            <li>
+                <a href="@Url.Action("Details",
+                    new { id = watches.ID })">
+                    <img alt="@watches.Title"
+                         src="@watches.WatchesBrandUrl" />
+                    
+                </a>
+            </li>
+        }
+    </ul>
+</div>
